@@ -37,6 +37,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    namespace = "com.segment.analytics.kotlin.destinations.castle"
 }
 
 dependencies {
