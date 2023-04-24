@@ -1,4 +1,4 @@
-package com.segment.analytics.destinations.mydestination.testapp
+package com.segment.analytics.destinations.castle.testapp
 
 import org.junit.Test
 

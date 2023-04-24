@@ -9,13 +9,13 @@ plugins {
 val VERSION_NAME: String by project
 
 android {
-    compileSdk = 31
+    compileSdk = 33
     buildToolsVersion = "31.0.0"
 
     defaultConfig {
         multiDexEnabled = true
         minSdk = 21
-        targetSdk = 31
+        targetSdk = 33
 
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("proguard-consumer-rules.pro")
@@ -52,7 +52,7 @@ dependencies {
 
 // Partner Dependencies
 dependencies {
-    // TODO add your partner deps here
+    implementation("io.castle.android:castle:3.0.7")
 }
 
 // Test Dependencies

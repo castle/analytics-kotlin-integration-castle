@@ -19,7 +19,7 @@ import org.robolectric.annotation.Config
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(manifest = Config.NONE)
-class MyDestinationTests {
+class CastleDestinationTests {
 
     class SomeObject {
         fun bundle(bundle: Bundle): Boolean {

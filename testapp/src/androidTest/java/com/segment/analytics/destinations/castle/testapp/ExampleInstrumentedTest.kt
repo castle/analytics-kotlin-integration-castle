@@ -1,4 +1,4 @@
-package com.segment.analytics.destinations.mydestination.testapp
+package com.segment.analytics.destinations.castle.testapp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -20,7 +20,7 @@ class ExampleInstrumentedTest {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         assertEquals(
-            "com.segment.analytics.destinations.mydestination.testapp",
+            "com.segment.analytics.destinations.castle.testapp",
             appContext.packageName
         )
     }
