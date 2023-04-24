@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         Analytics.debugLogsEnabled = true
 
-        analytics = Analytics("v3KSj7rwRNcE54vcZj5f3EQ6JUODhCIS", applicationContext) {
+        analytics = Analytics("tEbxKai3ZfOKPTBlIgYgkQWjWvkatsTC", applicationContext) {
             trackApplicationLifecycleEvents = true
             autoAddSegmentDestination = true
             flushAt = 3
