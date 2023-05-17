@@ -1,45 +1,34 @@
-// add badges and stuff here
+# Analytics-Kotlin Castle
 
-# Destination
+Add Castle support to your applications via this plugin for [Analytics-Kotlin](https://github.com/segmentio/analytics-kotlin)
 
-## Getting Started
+## Adding the dependency
+To install the Segment-Castle integration, simply add this line to your gradle file:
 
-1. Create repo from this template. The name of the repo should follow this pattern `project-language-destination`. For example `analytics-kotlin-firebase`
-2. In `settings.gralde.kts`, change `rootProject.name` to match your repo name.
-3. In `gradle.properties`, update the fields with `<>` brackets
-4. Delete `com.segment.analytics.kotlin.destinations.Destination.kt`
-5. Create a directory with the destination name under `com.segment.analytics.kotlin.destinations`. For example Firebase, `com.segment.analytics.kotlin.destinations.firebase`
-6. Create your destination class under the directory created in step 5. For example Firebase, `com.segment.analytics.kotlin.destinations.firebase.Firebase.kt`
-7. update Android manifest with your package name. For example Firebase
-   ```xml
-    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.segment.analytics.kotlin.destinations.firebase">
-   ```
-8. Implement destination
-9. Add tests
-
-
-## License
 ```
-MIT License
-
-Copyright (c) 2021 Segment
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+implementation 'com.segment.analytics.kotlin.destinations:castle:<latest_version>'
 ```
+Or the following for Kotlin DSL
+```
+implementation("com.segment.analytics.kotlin.destinations:castle:<latest_version>")
+```
+
+## Using the Plugin in your App
+
+Open the file where you setup and configure the Analytics-Kotlin library. Add this plugin to the list of imports.
+
+```
+import com.segment.analytics.kotlin.destinations.castle.CastleDestination
+```
+
+Just under your Analytics-Kotlin library setup, call `analytics.add(plugin = ...)` to add an instance of the plugin to the Analytics timeline.
+
+```
+    analytics = Analytics("<YOUR WRITE KEY>", applicationContext) {
+        this.flushAt = 3
+        this.trackApplicationLifecycleEvents = true
+    }
+    analytics.add(plugin = CastleDestination(userJwt = "<USER_JWT>"))
+```
+
+Your events will now be automatically sent to Castle.
