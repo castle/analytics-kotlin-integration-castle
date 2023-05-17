@@ -24,13 +24,13 @@ class MainActivity : AppCompatActivity() {
 
         Analytics.debugLogsEnabled = true
 
-        analytics = Analytics("tEbxKai3ZfOKPTBlIgYgkQWjWvkatsTC", applicationContext) {
+        analytics = Analytics(writeKey, applicationContext) {
             trackApplicationLifecycleEvents = true
             autoAddSegmentDestination = true
             flushAt = 3
         }
 
-        val castleDestination = CastleDestination(application = application, userJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVjMjQ0ZjMwLTM0MzItNGJiYy04OGYxLTFlM2ZjMDFiYzFmZSIsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsInJlZ2lzdGVyZWRfYXQiOiIyMDIyLTAxLTAxVDA5OjA2OjE0LjgwM1oifQ.eAwehcXZDBBrJClaE0bkO9XAr4U3vqKUpyZ-d3SxnH0")
+        val castleDestination = CastleDestination(application = application, userJwt = userJwt)
         analytics.add(plugin = castleDestination)
 
         binding.track.setOnClickListener {
@@ -63,5 +63,8 @@ class MainActivity : AppCompatActivity() {
                 put("second", "second_value")
             })
         }
+
+        val userJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVjMjQ0ZjMwLTM0MzItNGJiYy04OGYxLTFlM2ZjMDFiYzFmZSIsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsInJlZ2lzdGVyZWRfYXQiOiIyMDIyLTAxLTAxVDA5OjA2OjE0LjgwM1oifQ.eAwehcXZDBBrJClaE0bkO9XAr4U3vqKUpyZ-d3SxnH0"
+        val writeKey = BuildConfig.WRITE_KEY
     }
 }
