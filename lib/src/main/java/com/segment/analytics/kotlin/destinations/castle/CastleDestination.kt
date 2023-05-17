@@ -51,7 +51,7 @@ class CastleDestination(private val application: Application, private val userJw
 }
 
 /**
- * Flurry Settings data class.
+ * Castle Settings data class.
  */
 @Serializable
 data class CastleSettings(
